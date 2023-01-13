@@ -3,10 +3,10 @@ Hierarchical Graph Transformer with Contrastive Learning for Protein Function Pr
 The article is under submission
 
 ## Dependencies
-`pip install`
+`conda env create -f requirements.yml`
 
 You also need to install the relative packages to run ESM-1b protein language model. \
-See
+See 
 
 
 ## Protein function prediction
