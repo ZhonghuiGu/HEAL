@@ -1,6 +1,7 @@
-# HEAL
+HEAL
+====
 Hierarchical Graph Transformer with Contrastive Learning for Protein Function Prediction \
-The article is under submission
+---
 
 ![image](https://github.com/ZhonghuiGu/HEAL/blob/main/model/GraphACL-BIO.png)
 
