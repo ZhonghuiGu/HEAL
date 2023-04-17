@@ -88,7 +88,7 @@ AF2test_graph.pt  AF2train_graph.pt  AF2val_graph.pt  test_graph.pt  train_graph
 AF2test_pdbch.pt  AF2train_pdbch.pt  AF2val_pdbch.pt  test_pdbch.pt  train_pdbch.pt  val_pdbch.pt
 ```
 
-To train the model:
+#### To train the model:
 
     python train.py --device 0
                     --task bp 
@@ -102,8 +102,12 @@ To train the model:
 `$contrast` is whether to use contrastive learning. \
 `$AF2model` is whether to add AFch training set for training.
 
-For whom want to build the new dataset, the `*graph.pt` file contain the list of protein graphs. \
+#### For whom want to build the new dataset: 
+
+The `*graph.pt` file contain the list of protein graphs, the way to build the graph can be seen from `predictor.py`. \
 Each graph is built by `Pytorch Geometric`, and each graph has three attributes. \
 `graph.edge_index \n [2, protein_len]` is edge index of residue pairs whose Ca are within 10 angstroms.\
 `graph.native_x` is the one-hot embedding for each residue type. \
 `graph.x` is the ESM-1b language embedding for each sequences.
+
+`graph_data.py` is the script to load the data. If you want to train a new model, you can change the `self.graph_list` and `self.y_true` variable.
