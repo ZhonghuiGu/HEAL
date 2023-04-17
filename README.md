@@ -2,7 +2,7 @@
 Hierarchical Graph Transformer with Contrastive Learning for Protein Function Prediction \
 The article is under submission
 
-![image](https://github.com/ZhonghuiGu/HEAL/model/GraphACL-BIO.png)
+![image]([https://github.com/ZhonghuiGu/HEAL/model/GraphACL-BIO.png](https://github.com/ZhonghuiGu/HEAL/blob/main/model/GraphACL-BIO.png))
 
 ## Dependencies
 `conda env create -f requirements.yml`
