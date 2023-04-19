@@ -19,10 +19,10 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
 
 ## Protein function prediction
 
-    python predictor.py --task bp 
+    python predictor.py --task bp
                         --device 0 
-                        --pdb 3GDT-A.pdb 
-                        --esm1b_model ../esm-1b/checkpoints/esm1b_t33_650M_UR50S.pt
+                        --pdb case_study/4RQ2-A.pdb 
+                        --esm1b_model $esm1b_model
 
 `$task` can be among the three GO-term task -- `[bp, mf, cc]`. \
 `$pdb` is the path of the pdb file. \
@@ -31,44 +31,12 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
 #### output
 ```txt
 The protein may hold the following functions of BP:
-Possibility: 1.0 ||| Functions: GO:0072528, pyrimidine-containing compound biosynthetic process
-Possibility: 0.91 ||| Functions: GO:0006206, pyrimidine nucleobase metabolic process
-Possibility: 1.0 ||| Functions: GO:0072527, pyrimidine-containing compound metabolic process
-Possibility: 0.99 ||| Functions: GO:1901137, carbohydrate derivative biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0006753, nucleoside phosphate metabolic process
-Possibility: 0.78 ||| Functions: GO:0009173, pyrimidine ribonucleoside monophosphate metabolic process
-Possibility: 1.0 ||| Functions: GO:0055086, nucleobase-containing small molecule metabolic process
-Possibility: 0.79 ||| Functions: GO:0009130, pyrimidine nucleoside monophosphate biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0006793, phosphorus metabolic process
-Possibility: 1.0 ||| Functions: GO:0009117, nucleotide metabolic process
-Possibility: 0.97 ||| Functions: GO:0009156, ribonucleoside monophosphate biosynthetic process
-Possibility: 1.0 ||| Functions: GO:1901293, nucleoside phosphate biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0019438, aromatic compound biosynthetic process
-Possibility: 0.98 ||| Functions: GO:0046390, ribose phosphate biosynthetic process
-Possibility: 0.98 ||| Functions: GO:0009124, nucleoside monophosphate biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0034654, nucleobase-containing compound biosynthetic process
-Possibility: 0.95 ||| Functions: GO:0046112, nucleobase biosynthetic process
-Possibility: 0.94 ||| Functions: GO:0006207, 'de novo' pyrimidine nucleobase biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0006221, pyrimidine nucleotide biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0006796, phosphate-containing compound metabolic process
-Possibility: 0.81 ||| Functions: GO:0009129, pyrimidine nucleoside monophosphate metabolic process
-Possibility: 0.95 ||| Functions: GO:0019856, pyrimidine nucleobase biosynthetic process
-Possibility: 0.52 ||| Functions: GO:0006222, UMP biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0006220, pyrimidine nucleotide metabolic process
-Possibility: 0.76 ||| Functions: GO:0009174, pyrimidine ribonucleoside monophosphate biosynthetic process
-Possibility: 1.0 ||| Functions: GO:0090407, organophosphate biosynthetic process
-Possibility: 0.98 ||| Functions: GO:0009260, ribonucleotide biosynthetic process
-Possibility: 0.98 ||| Functions: GO:0009259, ribonucleotide metabolic process
-Possibility: 0.83 ||| Functions: GO:0009112, nucleobase metabolic process
-Possibility: 1.0 ||| Functions: GO:0019637, organophosphate metabolic process
-Possibility: 1.0 ||| Functions: GO:0009165, nucleotide biosynthetic process
-Possibility: 0.88 ||| Functions: GO:0009220, pyrimidine ribonucleotide biosynthetic process
-Possibility: 1.0 ||| Functions: GO:1901135, carbohydrate derivative metabolic process
-Possibility: 1.0 ||| Functions: GO:0009123, nucleoside monophosphate metabolic process
-Possibility: 0.99 ||| Functions: GO:0019693, ribose phosphate metabolic process
-Possibility: 0.99 ||| Functions: GO:0009161, ribonucleoside monophosphate metabolic process
-Possibility: 0.9 ||| Functions: GO:0009218, pyrimidine ribonucleotide metabolic process
-Possibility: 0.5 ||| Functions: GO:0016310, phosphorylation
+Possibility: 1.0 ||| Functions: GO:0034061, DNA polymerase activity
+Possibility: 1.0 ||| Functions: GO:0140097, catalytic activity, acting on DNA
+Possibility: 1.0 ||| Functions: GO:0003887, DNA-directed DNA polymerase activity
+Possibility: 1.0 ||| Functions: GO:0003677, DNA binding
+Possibility: 1.0 ||| Functions: GO:0016772, transferase activity, transferring phosphorus-containing groups
+Possibility: 1.0 ||| Functions: GO:0016779, nucleotidyltransferase activity
 ```
 
 ## Model training
