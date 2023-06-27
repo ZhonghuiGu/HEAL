@@ -19,7 +19,7 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
 
 ## Protein function prediction
 
-    python predictor.py --task bp
+    python predictor.py --task mf
                         --device 0 
                         --pdb case_study/4RQ2-A.pdb 
                         --esm1b_model $esm1b_model
