@@ -43,7 +43,7 @@ Possibility: 1.0 ||| Functions: GO:0016779, nucleotidyltransferase activity
 
     cd data
 
-Our data set can be downloaded from [here](https://pkueducn-my.sharepoint.com/:u:/g/personal/2001111563_stu_pku_edu_cn/EVGSjfSK9hJFg2nBgwrEtNQBaIiUrFPQaugUptA-QwYdFQ?e=ZmPZp0).
+Our data set can be downloaded from [here](https://pkueducn-my.sharepoint.com/:u:/g/personal/2001111563_pkueducn_onmicrosoft_com/EVGSjfSK9hJFg2nBgwrEtNQBaIiUrFPQaugUptA-QwYdFQ).
 
     unzip processed.zip
 
