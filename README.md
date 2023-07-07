@@ -29,7 +29,9 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
 `$esm1b_model` is the path of the ESM-1b model weight. \
 \
 The default model parameters are trained on the combination of PDBch and AFch training set, e.g., `$model_bpCLaf.pt`, `$model_ccCLaf.pt` and `$model_mfCLaf.pt`.
-You can also use the model parameters which are only trained on the PDBch training set through changing the codes, e.g., `$model_bpCL.pt`, `$model_ccCL.pt` and `$model_mfCL.pt`.
+You can also use the model parameters which are only trained on the PDBch training set through changing the codes, e.g., `$model_bpCL.pt`, `$model_ccCL.pt` and `$model_mfCL.pt`.\
+For exploring functions of understudied protein, we recommend to consider the predicted result from both `_CLaf.pt` and `_CL.pt` parameters.
+
 
 #### output
 ```txt
