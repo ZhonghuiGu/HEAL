@@ -11,11 +11,21 @@ from network import CL_protNET
 from utils import load_GO_annot
 import esm
 
+def str2bool(v):
+    if isinstance(v,bool):
+        return v
+    if v == 'True' or v == 'true':
+        return True
+    if v == 'False' or v == 'false':
+        return False
+        
 p = argparse.ArgumentParser()
 p.add_argument('--device', type=str, default='', help='')
 p.add_argument('--task', type=str, default='bp', choices=['bp','mf','cc'], help='gene ontoly task')
 p.add_argument('--pdb', type=str, default='', help='Input the query pdb file')
 p.add_argument('--esm1b_model', type=str, default='', help='The path of esm-1b model parameter.')
+p.add_argument('--only_pdbch', default=False, type=str2bool, help='To use model parameters trained only on PDBch training set')
+p.add_argument('--prob', default=0.5, type=float, help='Output the function with predicted probility > 0.5 .')
 args = p.parse_args()
 
 _, goterms, gonames, _ = load_GO_annot("data/nrPDB-GO_2019.06.18_annot.tsv")
@@ -105,11 +115,14 @@ elif args.task == 'cc':
     output_dim = 320
 
 model = CL_protNET(output_dim).to(device)
-model.load_state_dict(torch.load(f'model/model_{args.task}CLaf.pt',map_location=device))
+if args.only_pdbch:
+    model.load_state_dict(torch.load(f'model/model_{args.task}CL.pt',map_location=device))
+else:
+    model.load_state_dict(torch.load(f'model/model_{args.task}CLaf.pt',map_location=device))
 model.eval()
 with torch.no_grad():
     y_pred = model(batch.to(device)).cpu().numpy()
-func_index = np.where(y_pred > 0.5)[1]
+func_index = np.where(y_pred > args.prob)[1]
 if func_index.shape[0] == 0:
     print(f'Sorry, no functions of {args.task.upper()} can be predicted...')
 else:
