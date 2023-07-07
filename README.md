@@ -23,26 +23,32 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
                         --device 0 
                         --pdb case_study/4RQ2-A.pdb 
                         --esm1b_model $esm1b_model
+                        --only_pdbch false
+                        --prob 0.5
 
 `$task` can be among the three GO-term task -- `[bp, mf, cc]`. \
 `$pdb` is the path of the pdb file. \
 `$esm1b_model` is the path of the ESM-1b model weight. \
+`$prob` means outputing the functions with predicted probability larger than 0.5. \
+`$only_pdbch` means using the model parameters trained on the PDBch training set solely.\
 \
-The default model parameters are trained on the combination of PDBch and AFch training set, e.g., `$model_bpCLaf.pt`, `$model_ccCLaf.pt` and `$model_mfCLaf.pt`.
-You can also use the model parameters which are only trained on the PDBch training set through changing the codes, e.g., `$model_bpCL.pt`, `$model_ccCL.pt` and `$model_mfCL.pt`.\
-For exploring functions of understudied protein, we recommend to consider the predicted result from both `_CLaf.pt` and `_CL.pt` parameters.
-
+The default model parameters are trained on the combination of PDBch and AFch training set, e.g., `model_bpCLaf.pt`, `model_ccCLaf.pt` and `model_mfCLaf.pt`.\
+You can also use the model parameters which are only trained on the PDBch training by setting `$only_pdbch` true, e.g., `model_bpCL.pt`, `model_ccCL.pt` and `model_mfCL.pt`.
 
 #### output
 ```txt
-The protein may hold the following functions of BP:
-Possibility: 1.0 ||| Functions: GO:0034061, DNA polymerase activity
-Possibility: 1.0 ||| Functions: GO:0140097, catalytic activity, acting on DNA
-Possibility: 1.0 ||| Functions: GO:0003887, DNA-directed DNA polymerase activity
-Possibility: 1.0 ||| Functions: GO:0003677, DNA binding
-Possibility: 1.0 ||| Functions: GO:0016772, transferase activity, transferring phosphorus-containing groups
-Possibility: 1.0 ||| Functions: GO:0016779, nucleotidyltransferase activity
+The protein may hold the following functions of MF:
+Possibility: 0.99 ||| Functions: GO:0034061, DNA polymerase activity
+Possibility: 0.98 ||| Functions: GO:0140097, catalytic activity, acting on DNA
+Possibility: 0.96 ||| Functions: GO:0003887, DNA-directed DNA polymerase activity
+Possibility: 0.79 ||| Functions: GO:0003677, DNA binding
+Possibility: 0.95 ||| Functions: GO:0016772, transferase activity, transferring phosphorus-containing groups
+Possibility: 0.97 ||| Functions: GO:0016779, nucleotidyltransferase activity
 ```
+
+## Exploring functions of understudied protein
+For exploring functions of understudied protein, we recommend to consider the predicted results from both `_CLaf.pt` and `_CL.pt` parameters. \
+When there are no functions predicted under the probability threshold 0.5, you can set `$prob` lower to 0.4, 0.3 or even 0.2, and the predicted results still have reference value.
 
 ## Model training
 
