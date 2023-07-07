@@ -26,7 +26,10 @@ And the ESM-1b model weight we use can be downloaded [here](https://dl.fbaipubli
 
 `$task` can be among the three GO-term task -- `[bp, mf, cc]`. \
 `$pdb` is the path of the pdb file. \
-`$esm1b_model` is the path of the ESM-1b model weight.
+`$esm1b_model` is the path of the ESM-1b model weight. \
+\
+The default model parameters are trained on the combination of PDBch and AFch training set, e.g., `$model_bpCLaf.pt`, `$model_ccCLaf.pt` and `$model_mfCLaf.pt`.
+You can also use the model parameters which are only trained on the PDBch training set through changing the codes, e.g., `$model_bpCL.pt`, `$model_ccCL.pt` and `$model_mfCL.pt`.
 
 #### output
 ```txt
