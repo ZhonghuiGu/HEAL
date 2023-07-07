@@ -78,7 +78,7 @@ dismap = (H + H.T - 2*G)**0.5
 
 device = f'cuda:{args.device}'
 
-esm_model, alphabet = esm.pretrained.load_model_and_alphabet_local("/home/lhlai_pkuhpc/lustre3/zhgu/esm-1b/checkpoints/esm1b_t33_650M_UR50S.pt")
+esm_model, alphabet = esm.pretrained.load_model_and_alphabet_local(args.esm1b_model)
 
 batch_converter = alphabet.get_batch_converter()
 esm_model = esm_model.to(device)
@@ -105,7 +105,7 @@ elif args.task == 'cc':
     output_dim = 320
 
 model = CL_protNET(output_dim).to(device)
-model.load_state_dict(torch.load(f'model/model_{args.task}CL.pt',map_location=device))
+model.load_state_dict(torch.load(f'model/model_{args.task}CLaf.pt',map_location=device))
 model.eval()
 with torch.no_grad():
     y_pred = model(batch.to(device)).cpu().numpy()
