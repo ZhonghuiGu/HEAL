@@ -1,4 +1,4 @@
-name: heal
+name: test
 channels:
   - rdkit
   - https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch
@@ -91,7 +91,6 @@ dependencies:
   - python=3.7.10=hdb3f193_0
   - python-dateutil=2.8.1=pyhd3eb1b0_0
   - python_abi=3.7=1_cp37m
-  - pytorch=1.7.0=py3.7_cuda10.2.89_cudnn7.6.5_0
   - pytz=2021.1=pyhd3eb1b0_0
   - qt=5.9.7=h5867ecd_1
   - rdkit=2020.03.2.0=py37hc20afe1_1
@@ -103,8 +102,6 @@ dependencies:
   - sqlite=3.35.4=hdfb4753_0
   - threadpoolctl=2.1.0=pyh5ca1d4c_0
   - tk=8.6.10=hbc83047_0
-  - torchaudio=0.7.0=py37
-  - torchvision=0.8.1=py37_cu102
   - tornado=6.1=py37h27cfd23_0
   - tqdm=4.59.0=pyhd3eb1b0_1
   - traitlets=5.0.5=pyhd3eb1b0_0
@@ -156,19 +153,10 @@ dependencies:
     - rsa==4.9
     - setuptools==52.0.0
     - sklearn==0.0.post1
-    - tensorboard==2.11.2
-    - tensorboard-data-server==0.6.1
-    - tensorboard-plugin-wit==1.8.1
-    - tensorflow==2.3.4
-    - tensorflow-estimator==2.3.0
     - termcolor==2.2.0
-    - torch-cluster==1.5.9
-    - torch-geometric==1.6.3
-    - torch-scatter==2.0.7
-    - torch-sparse==0.6.9
-    - torch-spline-conv==1.2.1
     - urllib3==1.26.5
     - werkzeug==2.2.3
     - wrapt==1.15.0
     - zipp==3.15.0
 prefix: /home/lhlai_pkuhpc/lustre1/wangsw/software/anaconda3/envs/heal
+
