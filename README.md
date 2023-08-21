@@ -11,6 +11,13 @@ Clone the current repo
 
     git clone https://github.com/ZhonghuiGu/HEAL.git
     conda env create -f requirements.yml
+    conda install pytorch==1.7.0 cudatoolkit=10.2 -c pytorch
+    wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_cluster-1.5.9-cp37-cp37m-linux_x86_64.whl
+    wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_scatter-2.0.7-cp37-cp37m-linux_x86_64.whl
+    wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_sparse-0.6.9-cp37-cp37m-linux_x86_64.whl
+    wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_spline_conv-1.2.1-cp37-cp37m-linux_x86_64.whl
+    pip install *.whl
+    pip install torch_geometric==1.6.3
 
 You also need to install the relative packages to run ESM-1b protein language model. \
 Please see [facebookresearch/esm](https://github.com/facebookresearch/esm#getting-started-with-this-repo-) for details. \
@@ -85,7 +92,7 @@ AF2test_pdbch.pt  AF2train_pdbch.pt  AF2val_pdbch.pt  test_pdbch.pt  train_pdbch
 
 The `*graph.pt` file contain the list of protein graphs, the way to build the graph can be seen from `predictor.py`. \
 Each graph is built by `Pytorch Geometric`, and each graph has three attributes. \
-`graph.edge_index \n [2, protein_len]` is edge index of residue pairs whose Ca are within 10 angstroms.\
+`graph.edge_index \in [2, protein_len]` is edge index of residue pairs whose Ca are within 10 angstroms.\
 `graph.native_x` is the one-hot embedding for each residue type. \
 `graph.x` is the ESM-1b language embedding for each sequences.
 
