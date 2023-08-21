@@ -10,7 +10,7 @@ Hierarchical Graph Transformer with Contrastive Learning for Protein Function Pr
 Clone the current repo
 
     git clone https://github.com/ZhonghuiGu/HEAL.git
-    conda env create -f requirements.yml
+    conda env create -f environment.yml
     conda install pytorch==1.7.0 cudatoolkit=10.2 -c pytorch
     wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_cluster-1.5.9-cp37-cp37m-linux_x86_64.whl
     wget https://data.pyg.org/whl/torch-1.7.0%2Bcu102/torch_scatter-2.0.7-cp37-cp37m-linux_x86_64.whl
