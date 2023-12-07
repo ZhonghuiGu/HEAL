@@ -61,7 +61,7 @@ When there are no functions predicted under the probability threshold 0.5, you c
 
     cd data
 
-Our data set can be downloaded from [here](https://pkueducn-my.sharepoint.com/:u:/g/personal/2001111563_pkueducn_onmicrosoft_com/EVGSjfSK9hJFg2nBgwrEtNQBaIiUrFPQaugUptA-QwYdFQ).
+Our data set can be downloaded from [here](https://chinapku-my.sharepoint.com/:u:/g/personal/2001111563_stu_pku_edu_cn/ES8udQdwez1JkqEWRi0PuPkBoAWscdStRH1ywih8eFKGfg?e=xI1NWt).
 
     unzip processed.zip
 
