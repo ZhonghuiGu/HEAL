@@ -63,7 +63,7 @@ When there are no functions predicted under the probability threshold 0.5, you c
 
 Our data set can be downloaded from [here](https://disk.pku.edu.cn/link/AAD5055347F424437FBDDC37BCA4C7398E).
 
-    unzip processed.zip
+    tar -zxvf processed.tar.gz
 
 The dataset related files will be under `data/processed`. 
 Files with prefix of `AF2` belong to AFch dataset, others belong to PDBch dataset.
