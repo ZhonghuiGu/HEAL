@@ -35,9 +35,6 @@ def test(config, task, model_pt, test_type='test'):
 
         eval_loss = bce_loss(y_pred_all, y_true_all)
         
-        #Fmax = fmax(y_true_all.numpy(), y_pred_all.numpy(),100 )
-        #aupr = metrics.average_precision_score(y_true_all.numpy(), y_pred_all.numpy(), average='samples')
-        #log(f"Test ||| loss: {round(float(eval_loss),3)} ||| aupr: {round(float(aupr),3)} ||| Fmax: {round(float(Fmax),3)}" )
     
     if test_type == 'AF2test':
         result_name = config.test_result_path + 'AF2'+ model_pt[6:]
